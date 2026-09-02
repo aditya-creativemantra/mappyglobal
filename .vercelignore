@@ -1,0 +1,10 @@
+.git
+.next
+.next-broken-*
+.next-build-*
+.next-cache-*
+.vercel-backup-*
+node_modules
+.env
+.env.local
+.env*.local

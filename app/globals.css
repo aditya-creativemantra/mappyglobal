@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 229 52% 16%;
+  --muted: 220 33% 97%;
+  --muted-foreground: 224 15% 41%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 229 52% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 229 52% 16%;
+  --border: 224 29% 92%;
+  --input: 224 29% 92%;
+  --primary: 19 85% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 229 47% 23%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 220 33% 97%;
+  --accent-foreground: 229 47% 23%;
+  --destructive: 0 67% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 19 85% 55%;
+  --radius: 1.35rem;
+  --font-sans: "Helvetica Neue", "Arial Nova", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-display: "Helvetica Neue", "Arial Nova", "Avenir Next", "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(42, 49, 112, 0.06), transparent 28%),
+    radial-gradient(circle at top right, rgba(237, 105, 41, 0.06), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(237, 105, 41, 0.2);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(12px, -18px, 0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade {
+  animation: fade 0.9s ease both;
+}
+
+.brand-orb {
+  animation: drift 18s ease-in-out infinite;
+}
+
+.brand-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-rise,
+  .animate-fade,
+  .brand-orb {
+    animation: none;
+  }
+}

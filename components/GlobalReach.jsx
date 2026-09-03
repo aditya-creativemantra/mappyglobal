@@ -10,7 +10,7 @@ export default function GlobalReach({ id = "reach" }) {
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
           <div data-section-heading>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffb48c]">Global reach</p>
-            <h2 className="mt-5 max-w-[16ch] font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] sm:text-[3.25rem]">
+            <h2 className="mt-5 max-w-[16ch] font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] lg:text-[3.25rem]">
               Hiring access across regions, sectors, and time zones.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-8 text-white/70 sm:text-lg">

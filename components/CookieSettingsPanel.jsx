@@ -46,10 +46,10 @@ export default function CookieSettingsPanel() {
                 {category.required ? "Always on" : choices[category.id] ? "Allowed" : "Not allowed"}
               </span>
             </div>
-            <p className="mt-3 text-sm leading-7 text-[#4a5170]">{category.detail}</p>
+            <p className="mt-3 text-sm leading-7 text-[#2c3272]">{category.detail}</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {category.examples.map((example) => (
-                <li key={example} className="border border-[#dcdfeb] px-3 py-1.5 text-xs text-[#4a5170]">
+                <li key={example} className="border border-[#dcdfeb] px-3 py-1.5 text-xs text-[#2c3272]">
                   {example}
                 </li>
               ))}
@@ -82,7 +82,7 @@ export default function CookieSettingsPanel() {
         </button>
 
         {saved ? (
-          <p role="status" className="text-sm text-[#4a5170]">
+          <p role="status" className="text-sm text-[#2c3272]">
             Your cookie preferences have been saved on this device.
           </p>
         ) : null}

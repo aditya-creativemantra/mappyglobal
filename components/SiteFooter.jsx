@@ -7,7 +7,7 @@ import { contactEmail, footerColumns, legalLinks, socialLinks } from "@/lib/site
 export default function SiteFooter() {
   return (
     <footer className="bg-[#2c3272] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)]">
           <div className="max-w-sm">
             <Link href="/" aria-label="Mappy Global Resources home" className="inline-block">

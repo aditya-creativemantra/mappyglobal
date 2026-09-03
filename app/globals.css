@@ -96,6 +96,55 @@ textarea {
   animation: fade 0.9s ease both;
 }
 
+/* Mega-menu links: bold on hover with an underline that wipes in from the
+   left and retracts back the same way on leave. */
+.menu-underline {
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  transition: font-weight 0.2s ease, color 0.2s ease;
+}
+
+.menu-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-underline:hover::after,
+.menu-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.menu-underline:hover,
+.menu-underline:focus-visible {
+  font-weight: 700;
+}
+
+/* Reserve the bold width up front so the centred nav does not shift on hover. */
+.menu-underline[data-label] {
+  text-align: center;
+  font-weight: 500;
+}
+
+.menu-underline[data-label]::before {
+  content: attr(data-label);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+  pointer-events: none;
+}
+
 @keyframes ctaGlow {
   0%,
   100% {
@@ -147,5 +196,9 @@ textarea {
   .cta-glow,
   .ticker-track {
     animation: none;
+  }
+
+  .menu-underline::after {
+    transition: none;
   }
 }

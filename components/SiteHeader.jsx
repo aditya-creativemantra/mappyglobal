@@ -24,18 +24,10 @@ function ChevronDown(props) {
   );
 }
 
-function GridDots(props) {
+function CaretRight(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <circle cx="5" cy="5" r="1.6" />
-      <circle cx="12" cy="5" r="1.6" />
-      <circle cx="19" cy="5" r="1.6" />
-      <circle cx="5" cy="12" r="1.6" />
-      <circle cx="12" cy="12" r="1.6" />
-      <circle cx="19" cy="12" r="1.6" />
-      <circle cx="5" cy="19" r="1.6" />
-      <circle cx="12" cy="19" r="1.6" />
-      <circle cx="19" cy="19" r="1.6" />
+    <svg viewBox="0 0 12 12" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M3.5 1.5 9 6l-5.5 4.5z" />
     </svg>
   );
 }
@@ -64,6 +56,7 @@ export default function SiteHeader() {
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
 
   const closeAll = () => {
     setOpenMenu(null);
@@ -78,8 +71,16 @@ export default function SiteHeader() {
       }
     };
 
+    const onScroll = () => setScrolled(window.scrollY > 8);
+
+    onScroll();
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   const activeMenu = navigation.find((item) => item.label === openMenu && item.columns);
@@ -92,7 +93,10 @@ export default function SiteHeader() {
 
   return (
     <header data-header className="sticky top-0 z-50 bg-white">
-      <div className="relative border-b border-[#dcdfeb] bg-white" onMouseLeave={() => setOpenMenu(null)}>
+      <div
+        className={`relative border-b bg-white transition-shadow duration-300 ${
+          scrolled ? "border-transparent shadow-[0_6px_20px_-8px_rgba(22,32,74,0.28)]" : "border-[#dcdfeb] shadow-none"
+        }`} onMouseLeave={() => setOpenMenu(null)}>
         <div className="relative mx-auto flex h-[72px] max-w-7xl items-center gap-4 px-6 sm:h-[88px] lg:h-[100px] lg:gap-6 lg:px-8">
           <Link href="/" onClick={closeAll} className="flex items-center">
             <Image
@@ -114,16 +118,16 @@ export default function SiteHeader() {
                   aria-expanded={openMenu === item.label}
                   onMouseEnter={() => setOpenMenu(item.label)}
                   onClick={() => setOpenMenu((value) => (value === item.label ? null : item.label))}
-                  className={`flex items-center gap-1.5 border px-3 py-2 text-[18px] font-medium transition-colors ${
-                    openMenu === item.label
-                      ? "border-[#ed6929] text-[#ed6929]"
-                      : `border-transparent hover:text-[#ed6929] ${
-                          isCurrent(item.href) ? "text-[#ed6929]" : "text-[#2c3272]"
-                        }`
+                  className={`flex items-center gap-1.5 px-3 py-2 text-[18px] font-medium transition-colors ${
+                    openMenu === item.label || isCurrent(item.href)
+                      ? "text-[#ed6929]"
+                      : "text-[#2c3272] hover:text-[#ed6929]"
                   }`}
                 >
-                  {item.label}
-                  <ChevronDown className={`h-3 w-3 transition-transform ${openMenu === item.label ? "rotate-180" : ""}`} />
+                  <span className="menu-underline" data-label={item.label}>
+                    {item.label}
+                  </span>
+                  <ChevronDown className={`h-3 w-3 shrink-0 transition-transform ${openMenu === item.label ? "rotate-180" : ""}`} />
                 </button>
               ) : (
                 <Link
@@ -131,11 +135,13 @@ export default function SiteHeader() {
                   href={item.href}
                   onMouseEnter={() => setOpenMenu(null)}
                   onClick={closeAll}
-                  className={`border border-transparent px-3 py-2 text-[18px] font-medium transition-colors hover:text-[#ed6929] ${
+                  className={`px-3 py-2 text-[18px] font-medium transition-colors hover:text-[#ed6929] ${
                     isCurrent(item.href) ? "text-[#ed6929]" : "text-[#2c3272]"
                   }`}
                 >
-                  {item.label}
+                  <span className="menu-underline" data-label={item.label}>
+                    {item.label}
+                  </span>
                 </Link>
               )
             )}
@@ -165,16 +171,21 @@ export default function SiteHeader() {
             <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-14 px-6 py-12 lg:px-8">
               {activeMenu.columns.map((column) => (
                 <div key={column.title}>
-                  <p className="border-b border-[#2c3272]/25 pb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#2c3272]">
+                  <Link
+                    href={activeMenu.href}
+                    onClick={closeAll}
+                    className="group flex items-center gap-2 border-b border-[#2c3272]/25 pb-3 text-[15px] font-bold uppercase tracking-[0.14em] text-[#ed6929]"
+                  >
                     {column.title}
-                  </p>
+                    <CaretRight className="h-2.5 w-2.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
                   <ul className="mt-6 space-y-4">
                     {column.links.map((link) => (
                       <li key={link.label}>
                         <Link
                           href={link.href}
                           onClick={closeAll}
-                          className="text-[18px] leading-7 text-[#3d4468] transition-colors hover:text-[#ed6929]"
+                          className="menu-underline text-[18px] leading-7 text-[#3d4468] hover:text-[#ed6929]"
                         >
                           {link.label}
                         </Link>
@@ -182,16 +193,6 @@ export default function SiteHeader() {
                     ))}
                   </ul>
 
-                  {column.feature ? (
-                    <Link
-                      href={column.feature.href}
-                      onClick={closeAll}
-                      className="mt-7 inline-flex items-center gap-3 text-[18px] text-[#2c3272] transition-colors hover:text-[#ed6929]"
-                    >
-                      <GridDots className="h-4 w-4 text-[#ed6929]" />
-                      {column.feature.label}
-                    </Link>
-                  ) : null}
                 </div>
               ))}
             </div>
@@ -221,7 +222,14 @@ export default function SiteHeader() {
                     <div className="pb-4">
                       {item.columns.map((column) => (
                         <div key={column.title} className="mt-4">
-                          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8b93ab]">{column.title}</p>
+                          <Link
+                            href={item.href}
+                            onClick={closeAll}
+                            className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#ed6929]"
+                          >
+                            {column.title}
+                            <CaretRight className="h-2 w-2" />
+                          </Link>
                           <ul className="mt-3 space-y-3">
                             {column.links.map((link) => (
                               <li key={link.label}>

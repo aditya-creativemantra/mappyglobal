@@ -90,7 +90,7 @@ export default function CookieConsent() {
           <div>
             <div className="px-6 py-7 sm:px-8">
               <h2 className="text-lg font-semibold text-[#2c3272]">This website uses cookies</h2>
-              <p className="mt-4 text-sm leading-7 text-[#4a5170]">
+              <p className="mt-4 text-sm leading-7 text-[#2c3272]">
                 Cookies are small data files placed on your device when you visit a website. We use them to keep the
                 site working as you expect and, with your permission, to understand how it is used. You can choose
                 which categories to allow, and change your choice at any time from the cookie settings link in our
@@ -144,10 +144,10 @@ export default function CookieConsent() {
                     {category.required ? "Always on" : choices[category.id] ? "Allowed" : "Not allowed"}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-[#4a5170]">{category.detail}</p>
+                <p className="mt-3 text-sm leading-7 text-[#2c3272]">{category.detail}</p>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {category.examples.map((example) => (
-                    <li key={example} className="border border-[#dcdfeb] px-3 py-1.5 text-xs text-[#4a5170]">
+                    <li key={example} className="border border-[#dcdfeb] px-3 py-1.5 text-xs text-[#2c3272]">
                       {example}
                     </li>
                   ))}
@@ -158,7 +158,7 @@ export default function CookieConsent() {
         ) : null}
 
         {tab === "About" ? (
-          <div className="space-y-5 px-6 py-7 text-sm leading-7 text-[#4a5170] sm:px-8">
+          <div className="space-y-5 px-6 py-7 text-sm leading-7 text-[#2c3272] sm:px-8">
             <p>
               Cookies are small text files that websites place on your device. They can be read back on later visits,
               which lets a site remember things like your preferences, or measure how the site is being used.

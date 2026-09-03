@@ -21,7 +21,7 @@ export default function CookieSettingsPanel() {
 
   return (
     <div className="border border-[#dcdfeb] bg-white">
-      <div className="grid grid-cols-2 divide-x divide-y divide-[#dcdfeb] border-b border-[#dcdfeb] sm:grid-cols-4 sm:divide-y-0">
+      <div className="grid grid-cols-2 divide-x divide-[#dcdfeb] border-b border-[#dcdfeb]">
         {cookieCategories.map((category) => (
           <CookieToggle
             key={category.id}

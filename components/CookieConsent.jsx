@@ -13,7 +13,7 @@ import {
   writeConsent
 } from "@/lib/cookie-consent";
 
-const tabs = ["Consent", "Details", "About"];
+const tabs = ["Consent", "About"];
 
 export default function CookieConsent() {
   const [open, setOpen] = useState(false);
@@ -69,7 +69,7 @@ export default function CookieConsent() {
           </button>
         </div>
 
-        <div className="grid grid-cols-3 border-b border-[#dcdfeb]">
+        <div className="grid grid-cols-2 border-b border-[#dcdfeb]">
           {tabs.map((name) => (
             <button
               key={name}
@@ -102,7 +102,7 @@ export default function CookieConsent() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 divide-x divide-y divide-[#dcdfeb] border-y border-[#dcdfeb] sm:grid-cols-4 sm:divide-y-0">
+            <div className="grid grid-cols-2 divide-x divide-[#dcdfeb] border-y border-[#dcdfeb]">
               {cookieCategories.map((category) => (
                 <CookieToggle
                   key={category.id}
@@ -134,29 +134,6 @@ export default function CookieConsent() {
           </div>
         ) : null}
 
-        {tab === "Details" ? (
-          <div className="divide-y divide-[#dcdfeb]">
-            {cookieCategories.map((category) => (
-              <div key={category.id} className="px-6 py-6 sm:px-8">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-base font-semibold text-[#2c3272]">{category.label}</h3>
-                  <span className="border border-[#dcdfeb] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6c7290]">
-                    {category.required ? "Always on" : choices[category.id] ? "Allowed" : "Not allowed"}
-                  </span>
-                </div>
-                <p className="mt-3 text-sm leading-7 text-[#2c3272]">{category.detail}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {category.examples.map((example) => (
-                    <li key={example} className="border border-[#dcdfeb] px-3 py-1.5 text-xs text-[#2c3272]">
-                      {example}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        ) : null}
-
         {tab === "About" ? (
           <div className="space-y-5 px-6 py-7 text-sm leading-7 text-[#2c3272] sm:px-8">
             <p>
@@ -164,8 +141,8 @@ export default function CookieConsent() {
               which lets a site remember things like your preferences, or measure how the site is being used.
             </p>
             <p>
-              Mappy Global Resources uses only the cookies necessary to run this website. If we introduce statistics
-              or marketing cookies in future, they will be switched off until you allow them here.
+              Mappy Global Resources uses only the cookies necessary to run this website. If we introduce any further
+              cookies in future, they will be switched off until you allow them here.
             </p>
             <p>
               Your choice is stored on this device only. You can change or withdraw it at any time using the cookie

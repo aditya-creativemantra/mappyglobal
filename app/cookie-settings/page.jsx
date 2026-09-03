@@ -9,7 +9,7 @@ import { eyebrowClass } from "@/lib/site";
 export const metadata = {
   title: "Cookie settings | Mappy Global Resources",
   description:
-    "Review and change which cookies Mappy Global Resources may use on this device — necessary, preferences, statistics, and marketing."
+    "Review and change which cookies Mappy Global Resources may use on this device."
 };
 
 export default function CookieSettingsPage() {

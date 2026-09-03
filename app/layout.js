@@ -1,4 +1,15 @@
+import { Kumbh_Sans } from "next/font/google";
+
+import CookieConsent from "@/components/CookieConsent";
+
 import "./globals.css";
+
+const kumbhSans = Kumbh_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-kumbh-sans",
+  display: "swap"
+});
 
 export const metadata = {
   title: "Mappy Global Resources | Partnering in Your Critical and Niche Talent Needs",
@@ -8,8 +19,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={kumbhSans.variable}>
+      <body>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   );
 }

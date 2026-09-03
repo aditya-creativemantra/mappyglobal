@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
+  --background: 233 57% 97%;
   --foreground: 229 52% 16%;
   --muted: 220 33% 97%;
   --muted-foreground: 224 15% 41%;
@@ -23,8 +23,8 @@
   --destructive-foreground: 0 0% 100%;
   --ring: 19 85% 55%;
   --radius: 1.35rem;
-  --font-sans: "Helvetica Neue", "Arial Nova", "Avenir Next", "Segoe UI", Arial, sans-serif;
-  --font-display: "Helvetica Neue", "Arial Nova", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  --font-sans: var(--font-kumbh-sans), "Kumbh Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --font-display: var(--font-kumbh-sans), "Kumbh Sans", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -41,7 +41,7 @@ body {
   background:
     radial-gradient(circle at top left, rgba(42, 49, 112, 0.06), transparent 28%),
     radial-gradient(circle at top right, rgba(237, 105, 41, 0.06), transparent 24%),
-    linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+    linear-gradient(180deg, #f4f5fc 0%, #f0f1fa 100%);
 }
 
 button,
@@ -96,6 +96,35 @@ textarea {
   animation: fade 0.9s ease both;
 }
 
+@keyframes ctaGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(237, 105, 41, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 5px rgba(237, 105, 41, 0.5);
+  }
+}
+
+@keyframes tickerScroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.ticker-track {
+  animation: tickerScroll 34s linear infinite;
+}
+
+.cta-glow {
+  animation: ctaGlow 2.4s ease-in-out infinite;
+}
+
 .brand-orb {
   animation: drift 18s ease-in-out infinite;
 }
@@ -114,7 +143,9 @@ textarea {
 
   .animate-rise,
   .animate-fade,
-  .brand-orb {
+  .brand-orb,
+  .cta-glow,
+  .ticker-track {
     animation: none;
   }
 }

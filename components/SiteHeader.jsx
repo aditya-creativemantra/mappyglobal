@@ -98,12 +98,12 @@ export default function SiteHeader() {
           scrolled ? "border-transparent shadow-[0_6px_20px_-8px_rgba(22,32,74,0.28)]" : "border-[#dcdfeb] shadow-none"
         }`} onMouseLeave={() => setOpenMenu(null)}>
         <div className="relative mx-auto flex h-[72px] max-w-7xl items-center gap-4 px-6 sm:h-[88px] lg:h-[100px] lg:gap-6 lg:px-8">
-          <Link href="/" onClick={closeAll} className="flex items-center">
+          <Link href="/" onClick={closeAll} aria-label="Mappy Global Resources home" className="flex items-center">
             <Image
               src="/brand/mappy-logo.png"
               alt="Mappy Global Resources logo"
-              width={1179}
-              height={211}
+              width={1049}
+              height={195}
               className="h-9 w-auto sm:h-11 lg:h-12"
               priority
             />

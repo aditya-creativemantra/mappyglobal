@@ -51,6 +51,16 @@ textarea {
   font: inherit;
 }
 
+/* Interactive elements keep the hand cursor, including anchors that Next.js
+   renders without an href-driven default in some browsers. */
+a[href],
+button:not(:disabled),
+[role="button"],
+label[for],
+summary {
+  cursor: pointer;
+}
+
 ::selection {
   background: rgba(237, 105, 41, 0.2);
 }

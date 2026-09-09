@@ -51,7 +51,6 @@ export default function MappyHomepage() {
       const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power3.out" } });
 
       heroTimeline
-        .from("[data-hero-eyebrow]", { y: 18, autoAlpha: 0, duration: 0.6 })
         .from("[data-hero-title]", { y: 28, autoAlpha: 0, duration: 0.8 }, 0.1)
         .from("[data-hero-copy]", { y: 20, autoAlpha: 0, duration: 0.7 }, 0.22)
         .from("[data-hero-actions]", { y: 20, autoAlpha: 0, duration: 0.7 }, 0.32)
@@ -105,20 +104,16 @@ export default function MappyHomepage() {
 
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-24">
                 <div className="w-full max-w-xl">
-                  <p data-hero-eyebrow className={eyebrowClass}>
-                    Global recruitment agency
-                  </p>
-
                   <h1
                     data-hero-title
-                    className="mt-6 font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-6xl"
+                    className="font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-6xl"
                   >
-                    Connecting exceptional talent with the world&apos;s best employers.
+                    Where exceptional talent meets ambitious businesses.
                   </h1>
 
                   <p data-hero-copy className="mt-7 text-lg leading-8 text-[#2c3272]">
-                    Speed, accuracy, and agility at every stage of the talent journey, with consultants across India and
-                    the Middle East finding leaders and specialist talent that move the needle.
+                    From specialist talent to leadership hiring, we help businesses find the people they need to move
+                    forward &mdash; across India and the Middle East.
                   </p>
 
                   <div data-hero-actions className="mt-9 flex flex-wrap gap-4">
@@ -195,6 +190,7 @@ export default function MappyHomepage() {
                     </Link>
                   </article>
                 ))}
+                <div aria-hidden className="-mb-px -mr-px hidden bg-[#f4f5fc] md:block" />
               </div>
             </div>
           </section>

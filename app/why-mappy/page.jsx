@@ -13,21 +13,31 @@ export const metadata = {
     "Why organisations choose Mappy Global Resources: speed, accuracy and agility, international assignment expertise, end-to-end partnership, and local market judgment across India and the Middle East."
 };
 
-const deliveryModel = [
+const deliverySteps = [
   {
-    number: "01",
-    title: "Structured market mapping",
-    description: "Searches start with a sharper view of the market, the adjacencies, and the target talent universe."
+    title: "Understand",
+    description:
+      "We start with the brief behind the brief — the role, the team around it, and what a successful hire has to change."
   },
   {
-    number: "02",
-    title: "Deeper shortlist calibration",
-    description: "Candidates are reviewed for fit, motivation, compensation logic, and stakeholder alignment."
+    title: "Map",
+    description:
+      "We map the full talent universe: target companies, adjacent industries, and the people nobody has approached yet."
   },
   {
-    number: "03",
-    title: "Cross-border hiring rhythm",
-    description: "Teams stay aligned across time zones with tighter communication and faster decision loops."
+    title: "Assess",
+    description:
+      "Candidates are tested on capability, motivation, and compensation logic before they reach your inbox."
+  },
+  {
+    title: "Shortlist",
+    description:
+      "A calibrated shortlist with the reasoning behind every name, so stakeholders can decide quickly."
+  },
+  {
+    title: "Close",
+    description:
+      "We stay in it through offer, notice period, and onboarding — until the hire is in the seat."
   }
 ];
 
@@ -92,22 +102,18 @@ export default function WhyMappyPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={eyebrowClass}>What sets us apart</p>
               <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
-                Four reasons clients keep coming back.
+                Six reasons clients keep coming back.
               </h2>
 
-              <div className="mt-14 grid gap-x-12 gap-y-12 md:grid-cols-2 xl:grid-cols-4">
-                {whyMappyReasons.map(({ title, description, signals }) => (
-                  <div key={title} className="border-t-2 border-[#2c3272] pt-6">
-                    <h3 className="text-xl font-semibold leading-snug text-[#2c3272]">{title}</h3>
+              <div className="mt-14 grid gap-px border border-[#dcdfeb] bg-[#dcdfeb] md:grid-cols-2 xl:grid-cols-3">
+                {whyMappyReasons.map(({ title, description }, index) => (
+                  <article key={title} className="bg-white p-8 transition-colors hover:bg-[#fdf7f3] sm:p-10">
+                    <p className="font-display text-5xl font-semibold leading-none tracking-[-0.04em] text-[#ed6929]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-6 text-xl font-semibold leading-snug text-[#2c3272]">{title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
-                    <ul className="mt-5 space-y-2 border-t border-[#dcdfeb] pt-4">
-                      {signals.map((signal) => (
-                        <li key={signal} className="text-sm leading-6 text-[#2c3272]">
-                          {signal}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
@@ -156,17 +162,24 @@ export default function WhyMappyPage() {
                     Search discipline, applied the same way every time.
                   </h2>
 
-                  <div className="mt-10 divide-y divide-[#2c3272]/15 border-y border-[#2c3272]/15">
-                    {deliveryModel.map(({ number, title, description }) => (
-                      <div key={number} className="flex gap-6 py-6">
-                        <p className="font-display text-2xl font-semibold tracking-[-0.03em] text-[#ed6929]">{number}</p>
-                        <div>
-                          <h3 className="text-lg font-semibold text-[#2c3272]">{title}</h3>
+                  <ol className="mt-10">
+                    {deliverySteps.map(({ title, description }, index) => (
+                      <li key={title} className="flex gap-5 sm:gap-6">
+                        <div className="flex flex-col items-center">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center border border-[#2c3272]/25 bg-white font-display text-sm font-semibold tracking-[-0.02em] text-[#ed6929]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          {index < deliverySteps.length - 1 ? (
+                            <span aria-hidden className="mt-2 w-px flex-1 bg-[#2c3272]/20" />
+                          ) : null}
+                        </div>
+                        <div className={index < deliverySteps.length - 1 ? "pb-8" : ""}>
+                          <h3 className="text-lg font-semibold leading-10 text-[#2c3272]">{title}</h3>
                           <p className="mt-2 text-sm leading-7 text-[#2c3272]">{description}</p>
                         </div>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ol>
 
                   <Link href="/contact" className={`${btnPrimary} mt-10`}>
                     Start a search
@@ -184,8 +197,8 @@ export default function WhyMappyPage() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,27,72,0.12)_0%,rgba(18,27,72,0.5)_52%,rgba(18,27,72,0.88)_100%)]" />
 
-                <div className="relative flex min-h-[520px] flex-col justify-between gap-10 p-5 sm:p-8 lg:min-h-[720px]">
-                  <div className="flex flex-wrap gap-3 sm:justify-end">
+                <div className="relative flex min-h-[520px] flex-col justify-between gap-10 lg:min-h-[720px]">
+                  <div className="flex flex-wrap gap-3 p-5 pb-0 sm:justify-end sm:p-8 sm:pb-0">
                     {topSignals.map(({ label, icon: Icon }) => (
                       <span
                         key={label}
@@ -197,7 +210,7 @@ export default function WhyMappyPage() {
                     ))}
                   </div>
 
-                  <div className="border border-white/25 bg-white/10 p-6 backdrop-blur-xl sm:p-9">
+                  <div className="border-t border-white/25 bg-white/10 p-6 backdrop-blur-xl sm:p-9">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffb48c]">Client partnership</p>
                     <h3 className="mt-4 font-display text-[1.5rem] font-semibold leading-[1.12] tracking-[-0.03em] text-white sm:text-[2.15rem]">
                       Search conversations grounded in market context, stakeholder alignment, and global execution.

@@ -186,14 +186,16 @@ export default function ContactPage() {
               </h2>
 
               <div className="mt-14 grid gap-x-12 gap-y-12 md:grid-cols-2 xl:grid-cols-4">
-                {offices.map((office) => (
-                  <div key={office.city} className="border-t-2 border-[#2c3272] pt-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#ed6929]">{office.region}</p>
-                    <h3 className="mt-4 text-2xl font-semibold text-[#2c3272]">{office.city}</h3>
-                    <p className="mt-4 text-[15px] leading-7 text-[#2c3272]">{office.address}</p>
-                    <p className="mt-4 text-sm leading-6 text-[#6c7290]">{office.hours}</p>
-                  </div>
-                ))}
+                {offices
+                  .filter((office) => office.address)
+                  .map((office) => (
+                    <div key={office.city} className="border-t-2 border-[#2c3272] pt-6">
+                      <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#ed6929]">{office.region}</p>
+                      <h3 className="mt-4 text-2xl font-semibold text-[#2c3272]">{office.city}</h3>
+                      <p className="mt-4 text-[15px] leading-7 text-[#2c3272]">{office.address}</p>
+                      <p className="mt-4 text-sm leading-6 text-[#6c7290]">{office.hours}</p>
+                    </div>
+                  ))}
               </div>
 
               <div className="mt-16 border-t border-[#dcdfeb] pt-10">

@@ -57,7 +57,7 @@ export default function ThankYouPage() {
               <p className={`mt-8 ${eyebrowClass}`}>Enquiry received</p>
 
               <h1 className="mt-6 max-w-3xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-[4.25rem]">
-                Thank you — your message is with us.
+                Thank You - Your message is with us.
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-[#2c3272]">

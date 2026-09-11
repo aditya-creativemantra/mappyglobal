@@ -268,3 +268,210 @@ export function InstagramIcon(props) {
     </svg>
   );
 }
+
+/* Sector icons used on the Industries page. */
+
+export function Utensils(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M6 3v7a2.5 2.5 0 0 0 5 0V3" />
+      <path d="M8.5 10v11" />
+      <path d="M17.5 3c-1.4 1.2-2 3-2 5.5 0 1.7.7 2.8 2 3.2V21" />
+    </svg>
+  );
+}
+
+export function Cog(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <circle cx="12" cy="12" r="3.2" />
+      <path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6" />
+    </svg>
+  );
+}
+
+export function Car(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M5 17v1.6a.9.9 0 0 1-.9.9H3.4a.9.9 0 0 1-.9-.9V13l2.1-5.1A2 2 0 0 1 6.4 6.7h11.2a2 2 0 0 1 1.8 1.2L21.5 13v5.6a.9.9 0 0 1-.9.9h-.7a.9.9 0 0 1-.9-.9V17" />
+      <path d="M2.5 13h19" />
+      <circle cx="7" cy="15" r="1" />
+      <circle cx="17" cy="15" r="1" />
+    </svg>
+  );
+}
+
+export function Laptop(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect x="4" y="5" width="16" height="11" rx="1.6" />
+      <path d="M2 19.5h20" />
+    </svg>
+  );
+}
+
+export function BarChart(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M6 20v-6" />
+      <path d="M12 20V4" />
+      <path d="M18 20v-9" />
+    </svg>
+  );
+}
+
+export function Leaf(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M4 20c0-8 5-14 16-15 .5 7-2 15-10 15-2.5 0-4-1-6-2Z" />
+      <path d="M9.5 14.5C12 12 14.5 10.5 18 9.5" />
+    </svg>
+  );
+}
+
+export function HardHat(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M4 15.5a8 8 0 0 1 16 0" />
+      <path d="M9.5 8.2V5.6a1.2 1.2 0 0 1 1.2-1.2h2.6a1.2 1.2 0 0 1 1.2 1.2v2.6" />
+      <rect x="2.5" y="15.5" width="19" height="3.4" rx="1.2" />
+    </svg>
+  );
+}
+
+export function ShoppingCart(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M2.5 3.5h2.2l2.3 10.6a1.6 1.6 0 0 0 1.6 1.3h8.3a1.6 1.6 0 0 0 1.6-1.2l1.6-6.4H6" />
+      <circle cx="9" cy="19.5" r="1.3" />
+      <circle cx="17" cy="19.5" r="1.3" />
+    </svg>
+  );
+}
+
+export function HomeIcon(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M3.5 10.5 12 3.5l8.5 7" />
+      <path d="M5.5 9.6V20h13V9.6" />
+      <path d="M10 20v-5.2h4V20" />
+    </svg>
+  );
+}
+
+export function Shield(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 3 5 5.8v5.6c0 4.2 2.9 7.6 7 9.1 4.1-1.5 7-4.9 7-9.1V5.8Z" />
+    </svg>
+  );
+}
+
+export function Flask(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M9.5 3h5" />
+      <path d="M10.5 3v6.2L5.4 17.6A1.7 1.7 0 0 0 6.9 20.2h10.2a1.7 1.7 0 0 0 1.5-2.6L13.5 9.2V3" />
+      <path d="M7.8 14.6h8.4" />
+    </svg>
+  );
+}

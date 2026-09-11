@@ -212,3 +212,58 @@ summary {
     transition: none;
   }
 }
+
+/* Custom cursor: hide the native pointer while CustomCursor is mounted.
+   Form fields keep their own cursors so typing still reads correctly. */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor [role="button"],
+.has-custom-cursor [class*="cursor-"] {
+  cursor: none;
+}
+
+.has-custom-cursor input,
+.has-custom-cursor textarea,
+.has-custom-cursor select {
+  cursor: auto;
+}
+
+/* Typewriter caret for the maintenance headline. */
+@keyframes mappy-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  99% {
+    opacity: 0;
+  }
+}
+
+.typewriter-char {
+  position: relative;
+}
+
+.typewriter-char.is-caret::after {
+  content: "";
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  right: -0.14em;
+  width: 0.07em;
+  background-color: #ed6929;
+  animation: mappy-caret-blink 1s steps(1, end) infinite;
+}
+
+/* While the line is still typing the caret stays solid. */
+.is-typing .typewriter-char.is-caret::after {
+  animation: none;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-char.is-caret::after {
+    display: none;
+  }
+}

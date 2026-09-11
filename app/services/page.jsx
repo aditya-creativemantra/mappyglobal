@@ -10,7 +10,7 @@ import { btnOutline, btnPrimary, eyebrowClass, servicePaths } from "@/lib/site";
 export const metadata = {
   title: "Services | Mappy Global Resources",
   description:
-    "Permanent hiring, RPO, contract hiring, and retained executive search from Mappy Global Resources — across India and the Middle East."
+    "Permanent hiring, RPO, contract staffing, and retained executive search from Mappy Global Resources — across India and the Middle East."
 };
 
 export default function ServicesPage() {
@@ -68,8 +68,19 @@ export default function ServicesPage() {
               }`}
             >
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="grid overflow-hidden border border-[#dcdfeb] bg-white lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-                  <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-[440px]">
+                {/* Alternate the image side: left on odd cards, right on even ones. */}
+                <div
+                  className={`grid overflow-hidden border border-[#dcdfeb] bg-white ${
+                    index % 2 === 1
+                      ? "lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]"
+                      : "lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]"
+                  }`}
+                >
+                  <div
+                    className={`relative min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] ${
+                      index % 2 === 1 ? "lg:order-2" : ""
+                    }`}
+                  >
                     <Image
                       src={image}
                       alt={imageAlt}
@@ -79,7 +90,11 @@ export default function ServicesPage() {
                     />
                   </div>
 
-                  <div className="bg-[#f7f8fd] px-6 py-12 sm:px-12 sm:py-14 lg:flex lg:items-center lg:px-16">
+                  <div
+                    className={`bg-[#f7f8fd] px-6 py-12 sm:px-12 sm:py-14 lg:flex lg:items-center lg:px-16 ${
+                      index % 2 === 1 ? "lg:order-1" : ""
+                    }`}
+                  >
                     <div className="w-full max-w-xl">
                       <p className={eyebrowClass}>{category}</p>
 

@@ -12,15 +12,17 @@ export const metadata = {
     "Sector coverage across FMCG and FMCD, engineering and manufacturing, auto and farm equipment, technology, fintech, energy, construction, e-commerce, real estate, QSR, and chemicals."
 };
 
-// The tags are labels, not links. Hover and press both raise the same light-orange state.
-const tagBase =
-  "inline-flex cursor-default select-none items-center justify-center rounded-full border border-[#c8cde4] bg-white text-center font-medium text-[#2c3272] transition-all duration-200 hover:border-[#ed6929] hover:bg-[#fdf0e8] hover:text-[#ed6929] hover:shadow-[0_0_0_5px_rgba(237,105,41,0.12)] active:border-[#ed6929] active:bg-[#fdf0e8] active:text-[#ed6929] active:shadow-[0_0_0_5px_rgba(237,105,41,0.12)]";
+// Sector cards are labels, not links. The orange panel sits as a small tab on
+// the right edge and expands leftwards to flood the card on hover and press —
+// the same state on every card, per the content brief.
+const cardBase =
+  "group relative flex h-full cursor-default select-none flex-col overflow-hidden rounded-[20px] border border-[#dcdfeb] bg-white p-8 transition-colors duration-300 hover:border-[#ed6929] active:border-[#ed6929] sm:p-9";
 
-const tagSizes = {
-  sm: "px-7 py-4 text-[15px] sm:px-9 sm:py-5 sm:text-base",
-  md: "px-8 py-5 text-base sm:px-11 sm:py-6 sm:text-lg",
-  lg: "max-w-[20rem] border-2 px-9 py-6 text-lg font-semibold sm:px-12 sm:py-7 sm:text-xl"
-};
+// 23x76 tab, rounded on its left side, growing to fill the whole card.
+const fillBase =
+  "absolute right-0 top-[calc(50%-38px)] h-[76px] w-[23px] rounded-l-[15px] bg-[#ed6929] transition-all duration-300 ease-out";
+const fillHover =
+  "group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:rounded-none group-active:top-0 group-active:h-full group-active:w-full group-active:rounded-none";
 
 export default function IndustriesPage() {
   return (
@@ -67,16 +69,41 @@ export default function IndustriesPage() {
             </div>
           </section>
 
-          {/* Sector cloud */}
-          <section className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-28">
-            <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          {/* Sector coverage */}
+          <section className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-24">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={`${eyebrowClass} text-center`}>Where we hire</p>
 
-              <div className="mt-14 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-                {industryTags.map(({ name, size }) => (
-                  <span key={name} className={`${tagBase} ${tagSizes[size]}`}>
-                    {name}
-                  </span>
+              <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {industryTags.map(({ name, segments }) => (
+                  <div key={name} className={cardBase}>
+                    <span aria-hidden className={`${fillBase} ${fillHover}`} />
+
+                    {/* Content rides above the expanding fill. */}
+                    <div className="relative z-10">
+                      <h3 className="font-display text-[1.35rem] font-bold uppercase leading-[1.25] tracking-[-0.01em] text-[#2c3272] transition-colors duration-300 group-hover:text-white group-active:text-white sm:text-[1.5rem]">
+                        {name}
+                      </h3>
+
+                      <div className="mt-8 flex items-start gap-3.5">
+                        {/* Space is reserved so the list never shifts on hover. */}
+                        <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-active:opacity-100">
+                          <span className="h-2 w-2 rounded-full bg-white" />
+                        </span>
+
+                        <ul className="space-y-2">
+                          {segments.map((segment) => (
+                            <li
+                              key={segment}
+                              className="text-[15px] leading-6 text-[#3d4468] transition-colors duration-300 group-hover:text-white group-active:text-white sm:text-base"
+                            >
+                              {segment}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

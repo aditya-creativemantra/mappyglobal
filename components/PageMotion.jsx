@@ -110,10 +110,53 @@ export default function PageMotion({ children }) {
       });
     }, rootRef);
 
-    const refresh = window.setTimeout(() => ScrollTrigger.refresh(), 240);
+    // Reveals are positioned from element offsets, so anything that shifts the
+    // layout after mount (web fonts swapping in, images landing) can leave a
+    // trigger measured against stale positions and never fire it.
+    const refreshNow = () => ScrollTrigger.refresh();
+    const refresh = window.setTimeout(refreshNow, 240);
+
+    window.addEventListener("load", refreshNow);
+
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(refreshNow).catch(() => {});
+    }
+
+    // Safety net: content must never stay invisible. Reveals fire at "top 82-86%",
+    // so anything still hidden once its top is well above that line had a trigger
+    // that never ran — drop the hidden state rather than leave a blank section.
+    // The threshold sits clear of the trigger point so real reveals still play.
+    let sweepQueued = false;
+
+    const sweep = () => {
+      sweepQueued = false;
+      const limit = window.innerHeight * 0.6;
+
+      root.querySelectorAll('[style*="visibility: hidden"]').forEach((element) => {
+        const rect = element.getBoundingClientRect();
+
+        if (rect.top < limit && rect.bottom > 0) {
+          element.style.visibility = "";
+          element.style.opacity = "";
+          element.style.transform = "";
+        }
+      });
+    };
+
+    const queueSweep = () => {
+      if (sweepQueued) return;
+      sweepQueued = true;
+      requestAnimationFrame(sweep);
+    };
+
+    const safety = window.setTimeout(sweep, 2500);
+    window.addEventListener("scroll", queueSweep, { passive: true });
 
     return () => {
       window.clearTimeout(refresh);
+      window.clearTimeout(safety);
+      window.removeEventListener("load", refreshNow);
+      window.removeEventListener("scroll", queueSweep);
       media.revert();
       ctx.revert();
     };

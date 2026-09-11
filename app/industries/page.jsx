@@ -1,14 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import SiteFooter from "@/components/SiteFooter";
 import PageMotion from "@/components/PageMotion";
 import SiteHeader from "@/components/SiteHeader";
-import { btnOutline, btnPrimary, eyebrowClass, specialtyGroups } from "@/lib/site";
+import { btnOutline, btnPrimary, eyebrowClass, industryTags } from "@/lib/site";
 
 export const metadata = {
   title: "Industries | Mappy Global Resources",
   description:
-    "Sector coverage across FMCG and consumer, pharma and life sciences, technology and IT, BFSI and fintech, manufacturing and infrastructure, telecom, logistics, and digital media."
+    "Sector coverage across FMCG and FMCD, engineering and manufacturing, auto and farm equipment, technology, fintech, energy, construction, e-commerce, real estate, QSR, and chemicals."
+};
+
+// The tags are labels, not links. Hover and press both raise the same light-orange state.
+const tagBase =
+  "inline-flex cursor-default select-none items-center justify-center rounded-full border border-[#c8cde4] bg-white text-center font-medium text-[#2c3272] transition-all duration-200 hover:border-[#ed6929] hover:bg-[#fdf0e8] hover:text-[#ed6929] hover:shadow-[0_0_0_5px_rgba(237,105,41,0.12)] active:border-[#ed6929] active:bg-[#fdf0e8] active:text-[#ed6929] active:shadow-[0_0_0_5px_rgba(237,105,41,0.12)]";
+
+const tagSizes = {
+  sm: "px-7 py-4 text-[15px] sm:px-9 sm:py-5 sm:text-base",
+  md: "px-8 py-5 text-base sm:px-11 sm:py-6 sm:text-lg",
+  lg: "max-w-[20rem] border-2 px-9 py-6 text-lg font-semibold sm:px-12 sm:py-7 sm:text-xl"
 };
 
 export default function IndustriesPage() {
@@ -18,83 +29,55 @@ export default function IndustriesPage() {
 
       <PageMotion>
         <main>
+          {/* Banner */}
           <section className="border-b border-[#dcdfeb] bg-white">
-            <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-              <p className={eyebrowClass}>Industries</p>
-              <h1 className="mt-6 max-w-4xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-[4.25rem]">
-                Industry expertise across every vertical.
-              </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#2c3272]">
-                Fifteen-plus sectors and growing. Wherever talent is critical, Mappy brings the context, access, and
-                search discipline to deliver.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/contact" className={btnPrimary}>
-                  Discuss your sector
-                </Link>
-                <Link href="/services" className={btnOutline}>
-                  See our services
-                </Link>
+            <div className="grid lg:grid-cols-2">
+              <div className="relative order-1 min-h-[320px] overflow-hidden sm:min-h-[420px] lg:order-2 lg:min-h-[560px]">
+                <Image
+                  src="/whymappy.webp"
+                  alt="Mappy consultants reviewing sector hiring data"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-[58%_center]"
+                />
               </div>
-            </div>
-          </section>
 
-          {/* Sectors */}
-          <section className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-24">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="grid gap-px border border-[#dcdfeb] bg-[#dcdfeb] md:grid-cols-2 xl:grid-cols-3">
-                {specialtyGroups.map(({ title, slug, roles, icon: Icon }) => (
-                  <article key={slug} id={slug} className="scroll-mt-[84px] lg:scroll-mt-[112px] bg-white p-8">
-                    <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f6cdb6] bg-white shadow-[0_10px_26px_rgba(237,105,41,0.22)] transition-shadow duration-300">
-                    <Icon className="h-7 w-7 text-[#ed6929]" />
-                  </span>
-                    <h2 className="mt-6 text-2xl font-semibold leading-tight text-[#2c3272]">{title}</h2>
-                    <p className="mt-4 text-sm leading-7 text-[#2c3272]">
-                      Specialist recruitment support shaped around live market context and priority roles.
-                    </p>
-                    <ul className="mt-6 space-y-3 border-t border-[#e5e7f1] pt-5">
-                      {roles.map((role) => (
-                        <li key={role} className="text-[15px] leading-6 text-[#2c3272]">
-                          {role}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href="/contact"
-                      className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#2c3272] transition-colors hover:text-[#ed6929]"
-                    >
-                      Hire in this sector
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* CTA */}
-          <section className="bg-white py-20 sm:py-28">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="grid gap-10 border border-[#dcdfeb] bg-[#f4f5fc] p-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:p-16">
-                <div>
-                  <p className={eyebrowClass}>Start the conversation</p>
-                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
-                    Hiring in a sector not listed here?
-                  </h2>
-                  <p className="mt-6 max-w-xl text-base leading-8 text-[#2c3272] sm:text-lg">
-                    Sector coverage keeps expanding with client demand. Tell us the market and we will tell you what we
-                    can access.
+              <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
+                <div className="w-full max-w-xl">
+                  <p className={eyebrowClass}>Industries</p>
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                    Industry expertise across every vertical.
+                  </h1>
+                  <p className="mt-7 text-lg leading-8 text-[#2c3272]">
+                    Wherever talent is critical, Mappy brings the context, access, and search discipline to deliver —
+                    across the sectors below and the ones our clients take us into next.
                   </p>
-                </div>
 
-                <div className="flex flex-wrap gap-4 lg:justify-end">
-                  <Link href="/contact" className={btnPrimary}>
-                    Contact us
-                  </Link>
-                  <Link href="/why-mappy" className={btnOutline}>
-                    Why Mappy
-                  </Link>
+                  <div className="mt-9 flex flex-wrap gap-4">
+                    <Link href="/contact" className={btnPrimary}>
+                      Discuss your sector
+                    </Link>
+                    <Link href="/services" className={btnOutline}>
+                      See our services
+                    </Link>
+                  </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Sector cloud */}
+          <section className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-28">
+            <div className="mx-auto max-w-5xl px-6 lg:px-8">
+              <p className={`${eyebrowClass} text-center`}>Where we hire</p>
+
+              <div className="mt-14 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+                {industryTags.map(({ name, size }) => (
+                  <span key={name} className={`${tagBase} ${tagSizes[size]}`}>
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
           </section>

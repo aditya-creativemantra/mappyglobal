@@ -165,7 +165,7 @@ export default function MappyHomepage() {
                 <SectionHeading
                   eyebrow="Services"
                   title="End-to-end recruitment at global scale."
-                  description="Five ways Mappy supports hiring — from retained leadership search to embedded recruitment teams and transaction support."
+                  description="Four ways Mappy supports hiring — from permanent and contract placements to embedded recruitment teams and retained leadership search."
                   className="max-w-3xl"
                 />
                 <Link href="/services" className={`${btnOutline} shrink-0`}>
@@ -173,8 +173,8 @@ export default function MappyHomepage() {
                 </Link>
               </div>
 
-              <div data-reveal-group className="mt-16 grid gap-px border border-[#dcdfeb] bg-[#dcdfeb] md:grid-cols-2 xl:grid-cols-3">
-                {servicePaths.map(({ title, slug, description, icon: Icon }) => (
+              <div data-reveal-group className="mt-16 grid gap-px border border-[#dcdfeb] bg-[#dcdfeb] md:grid-cols-2 xl:grid-cols-4">
+                {servicePaths.map(({ title, slug, href, description, icon: Icon }) => (
                   <article key={slug} className="group bg-white p-8 transition-colors hover:bg-[#fdf7f3]">
                     <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f6cdb6] bg-white shadow-[0_10px_26px_rgba(237,105,41,0.22)] transition-shadow duration-300 group-hover:shadow-[0_14px_32px_rgba(237,105,41,0.34)]">
                     <Icon className="h-7 w-7 text-[#ed6929]" />
@@ -182,7 +182,7 @@ export default function MappyHomepage() {
                     <h3 className="mt-6 text-2xl font-semibold leading-tight text-[#2c3272]">{title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
                     <Link
-                      href={`/services#${slug}`}
+                      href={href}
                       className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#2c3272] transition-colors group-hover:text-[#ed6929]"
                     >
                       Read more
@@ -190,7 +190,6 @@ export default function MappyHomepage() {
                     </Link>
                   </article>
                 ))}
-                <div aria-hidden className="-mb-px -mr-px hidden bg-[#f4f5fc] md:block" />
               </div>
             </div>
           </section>
@@ -212,7 +211,7 @@ export default function MappyHomepage() {
 
               <div data-reveal-group className="mt-16 grid gap-x-12 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
                 {specialtyGroups.map(({ title, slug, roles, icon: Icon }) => (
-                  <Link key={slug} href={`/industries#${slug}`} className="group border-t-2 border-[#2c3272] pt-6">
+                  <Link key={slug} href="/industries" className="group border-t-2 border-[#2c3272] pt-6">
                     <div className="flex items-center gap-3">
                       <Icon className="h-5 w-5 text-[#ed6929]" />
                       <h3 className="text-xl font-semibold text-[#2c3272] transition-colors group-hover:text-[#ed6929]">

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { navigation } from "@/lib/site";
 
@@ -51,12 +51,18 @@ function CloseIcon(props) {
   );
 }
 
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [menuLeft, setMenuLeft] = useState(null);
+  const barRef = useRef(null);
+  const panelRef = useRef(null);
+  const triggerRefs = useRef({});
 
   const closeAll = () => {
     setOpenMenu(null);
@@ -85,6 +91,31 @@ export default function SiteHeader() {
 
   const activeMenu = navigation.find((item) => item.label === openMenu && item.columns);
 
+  // Centre the dropdown on the nav item that opened it, clamped inside the header.
+  useIsomorphicLayoutEffect(() => {
+    if (!activeMenu) {
+      setMenuLeft(null);
+      return;
+    }
+
+    const trigger = triggerRefs.current[activeMenu.label];
+    const bar = barRef.current;
+    const panel = panelRef.current;
+    if (!trigger || !bar || !panel) return;
+
+    const triggerRect = trigger.getBoundingClientRect();
+    const barRect = bar.getBoundingClientRect();
+    const half = panel.offsetWidth / 2;
+    const gutter = 24;
+
+    let left = triggerRect.left + triggerRect.width / 2 - barRect.left;
+    const min = gutter + half;
+    const max = barRect.width - gutter - half;
+    if (max > min) left = Math.min(Math.max(left, min), max);
+
+    setMenuLeft(left);
+  }, [activeMenu]);
+
   // The nav item for the page you are on gets the same colour as hover.
   const isCurrent = (href) => {
     const base = href.split("#")[0];
@@ -96,7 +127,10 @@ export default function SiteHeader() {
       <div
         className={`relative border-b bg-white transition-shadow duration-300 ${
           scrolled ? "border-transparent shadow-[0_6px_20px_-8px_rgba(22,32,74,0.28)]" : "border-[#dcdfeb] shadow-none"
-        }`} onMouseLeave={() => setOpenMenu(null)}>
+        }`}
+        ref={barRef}
+        onMouseLeave={() => setOpenMenu(null)}
+      >
         <div className="relative mx-auto flex h-[72px] max-w-7xl items-center gap-4 px-6 sm:h-[88px] lg:h-[100px] lg:gap-6 lg:px-8">
           <Link href="/" onClick={closeAll} aria-label="Mappy Global Resources home" className="flex items-center">
             <Image
@@ -115,6 +149,9 @@ export default function SiteHeader() {
                 <button
                   key={item.label}
                   type="button"
+                  ref={(node) => {
+                    triggerRefs.current[item.label] = node;
+                  }}
                   aria-expanded={openMenu === item.label}
                   onMouseEnter={() => setOpenMenu(item.label)}
                   onClick={() => setOpenMenu((value) => (value === item.label ? null : item.label))}
@@ -167,10 +204,14 @@ export default function SiteHeader() {
         </div>
 
         {activeMenu ? (
-          <div className="absolute inset-x-0 top-full hidden border-b border-[#dcdfeb] bg-white shadow-[0_20px_40px_-32px_rgba(22,32,74,0.5)] xl:block">
-            <div className="mx-auto grid max-w-7xl grid-cols-3 gap-x-14 px-6 py-12 lg:px-8">
+          <div
+            ref={panelRef}
+            style={{ left: menuLeft ?? "50%", visibility: menuLeft === null ? "hidden" : undefined }}
+            className="absolute top-full z-40 hidden w-max max-w-[calc(100vw-3rem)] -translate-x-1/2 border border-[#dcdfeb] border-t-0 bg-white shadow-[0_24px_44px_-28px_rgba(22,32,74,0.5)] xl:block"
+          >
+            <div className="flex gap-x-16 px-10 py-9">
               {activeMenu.columns.map((column) => (
-                <div key={column.title}>
+                <div key={column.title} className="min-w-[220px]">
                   <Link
                     href={activeMenu.href}
                     onClick={closeAll}

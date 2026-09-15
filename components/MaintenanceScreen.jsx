@@ -171,7 +171,7 @@ export default function MaintenanceScreen() {
         <h1
           data-headline
           aria-label={HEADLINE}
-          className="relative mt-10 flex flex-wrap justify-center font-display text-[2.1rem] font-semibold leading-[1.1] tracking-[0.22em] text-white sm:text-[3.4rem] sm:tracking-[0.3em] lg:text-[4.6rem]"
+          className="relative mt-10 flex flex-wrap justify-center font-display text-[2.1rem] font-semibold tracking-[0.22em] text-white sm:text-[3.4rem] sm:tracking-[0.3em] lg:text-[4.6rem] leading-[2.5rem]"
         >
           {headlineChars.map((char, index) => (
             <span key={`${char}-${index}`} data-char className="typewriter-char inline-block">

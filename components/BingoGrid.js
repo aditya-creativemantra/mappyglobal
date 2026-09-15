@@ -44,7 +44,7 @@ export default function BingoGrid({
           <p className={cn("font-semibold uppercase opacity-80", preview ? "text-[10px] tracking-[0.24em]" : "text-xs tracking-[0.3em]")}>
             Custom bingo card
           </p>
-          <h2 className={cn("mt-2 text-balance font-semibold tracking-tight", titleSize)}>{title}</h2>
+          <h2 className={cn("mt-2 text-balance font-semibold tracking-tight leading-[2.5rem]", titleSize)}>{title}</h2>
         </div>
       </div>
 

@@ -89,7 +89,7 @@ export default function CookieConsent() {
         {tab === "Consent" ? (
           <div>
             <div className="px-6 py-7 sm:px-8">
-              <h2 className="text-lg font-semibold text-[#2c3272]">This website uses cookies</h2>
+              <h2 className="text-lg font-semibold text-[#2c3272] leading-[2.5rem]">This website uses cookies</h2>
               <p className="mt-4 text-sm leading-7 text-[#2c3272]">
                 Cookies are small data files placed on your device when you visit a website. We use them to keep the
                 site working as you expect and, with your permission, to understand how it is used. You can choose

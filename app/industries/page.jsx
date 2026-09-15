@@ -48,7 +48,7 @@ export default function IndustriesPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>Industries</p>
-                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem] leading-[2.5rem]">
                     Industry expertise across every vertical.
                   </h1>
                   <p className="mt-7 text-lg leading-8 text-[#2c3272]">
@@ -81,7 +81,7 @@ export default function IndustriesPage() {
 
                     {/* Content rides above the expanding fill. */}
                     <div className="relative z-10">
-                      <h3 className="font-display text-[1.35rem] font-bold uppercase leading-[1.25] tracking-[-0.01em] text-[#2c3272] transition-colors duration-300 group-hover:text-white group-active:text-white sm:text-[1.5rem]">
+                      <h3 className="font-display text-[1.35rem] font-bold uppercase tracking-[-0.01em] text-[#2c3272] transition-colors duration-300 group-hover:text-white group-active:text-white sm:text-[1.5rem] leading-[2.5rem]">
                         {name}
                       </h3>
 

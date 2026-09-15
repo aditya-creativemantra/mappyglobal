@@ -56,7 +56,7 @@ export default function ThankYouPage() {
 
               <p className={`mt-8 ${eyebrowClass}`}>Enquiry received</p>
 
-              <h1 className="mt-6 max-w-3xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-[4.25rem]">
+              <h1 className="mt-6 max-w-3xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] tracking-[-0.035em] text-[#2c3272] lg:text-[4.25rem] leading-[2.5rem]">
                 Thank You - Your message is with us.
               </h1>
 
@@ -83,7 +83,7 @@ export default function ThankYouPage() {
                 {nextSteps.map(({ number, title, description }) => (
                   <div key={number} className="border-t border-[#dcdfeb] pt-6">
                     <p className="font-display text-5xl font-semibold tracking-[-0.04em] text-[#ed6929]">{number}</p>
-                    <h2 className="mt-5 text-xl font-semibold text-[#2c3272]">{title}</h2>
+                    <h2 className="mt-5 text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{title}</h2>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
                   </div>
                 ))}

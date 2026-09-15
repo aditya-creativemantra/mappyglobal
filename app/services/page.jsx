@@ -37,7 +37,7 @@ export default function ServicesPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>Services</p>
-                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem] leading-[2.5rem]">
                     End-to-end recruitment at global scale.
                   </h1>
                   <p className="mt-7 text-lg leading-8 text-[#2c3272]">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
                     <div className="w-full max-w-xl">
                       <p className={eyebrowClass}>{category}</p>
 
-                      <h2 className="mt-5 font-display text-[1.9rem] font-semibold leading-[1.06] tracking-[-0.03em] text-[#2c3272] sm:text-4xl lg:text-[2.75rem]">
+                      <h2 className="mt-5 font-display text-[1.9rem] font-semibold tracking-[-0.03em] text-[#2c3272] sm:text-4xl lg:text-[2.75rem] leading-[2.5rem]">
                         {title}
                       </h2>
 

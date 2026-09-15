@@ -370,7 +370,7 @@ export default function App() {
                   Single-day simulator
                 </Badge>
               </div>
-              <h1 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 xl:text-3xl">
+              <h1 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950 xl:text-3xl leading-[2.5rem]">
                 Booking availability at a glance
               </h1>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">

@@ -28,7 +28,7 @@ function SectionHeading({ eyebrow, title, description, className = "" }) {
   return (
     <div className={className} data-section-heading>
       <p className={eyebrowClass}>{eyebrow}</p>
-      <h2 className="mt-5 max-w-4xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+      <h2 className="mt-5 max-w-4xl font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
         {title}
       </h2>
       {description ? (
@@ -106,7 +106,7 @@ export default function MappyHomepage() {
                 <div className="w-full max-w-xl">
                   <h1
                     data-hero-title
-                    className="font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-6xl"
+                    className="font-display text-[2.15rem] font-semibold sm:text-[2.9rem] tracking-[-0.035em] text-[#2c3272] lg:text-6xl leading-[2.5rem]"
                   >
                     Where exceptional talent meets ambitious businesses.
                   </h1>
@@ -179,7 +179,7 @@ export default function MappyHomepage() {
                     <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f6cdb6] bg-white shadow-[0_10px_26px_rgba(237,105,41,0.22)] transition-shadow duration-300 group-hover:shadow-[0_14px_32px_rgba(237,105,41,0.34)]">
                     <Icon className="h-7 w-7 text-[#ed6929]" />
                   </span>
-                    <h3 className="mt-6 text-2xl font-semibold leading-tight text-[#2c3272]">{title}</h3>
+                    <h3 className="mt-6 text-2xl font-semibold text-[#2c3272] leading-[2.5rem]">{title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
                     <Link
                       href={href}
@@ -214,7 +214,7 @@ export default function MappyHomepage() {
                   <Link key={slug} href="/industries" className="group border-t-2 border-[#2c3272] pt-6">
                     <div className="flex items-center gap-3">
                       <Icon className="h-5 w-5 text-[#ed6929]" />
-                      <h3 className="text-xl font-semibold text-[#2c3272] transition-colors group-hover:text-[#ed6929]">
+                      <h3 className="text-xl font-semibold text-[#2c3272] transition-colors group-hover:text-[#ed6929] leading-[2.5rem]">
                         {title}
                       </h3>
                     </div>
@@ -261,7 +261,7 @@ export default function MappyHomepage() {
                     <div className="flex flex-1 flex-col justify-between border-x border-b border-[#dcdfeb] p-7">
                       <div>
                         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#ed6929]">{item.eyebrow}</p>
-                        <h3 className="mt-4 text-xl font-semibold leading-snug text-[#2c3272]">{item.title}</h3>
+                        <h3 className="mt-4 text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{item.title}</h3>
                       </div>
                       <p className="mt-4 text-sm leading-7 text-[#2c3272]">{item.description}</p>
                     </div>
@@ -279,7 +279,7 @@ export default function MappyHomepage() {
               <div className="grid gap-10 border border-[#dcdfeb] bg-[#f4f5fc] p-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:p-16">
                 <div data-section-heading>
                   <p className={eyebrowClass}>Start the conversation</p>
-                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                     Need an expert hiring partner?
                   </h2>
                   <p className="mt-6 max-w-xl text-base leading-8 text-[#2c3272] sm:text-lg">

@@ -13,7 +13,7 @@ export default function LegalPage({ eyebrow, title, intro, updated, sections }) 
           <section className="border-b border-[#dcdfeb] bg-white">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
               <p className={eyebrowClass}>{eyebrow}</p>
-              <h1 className="mt-6 max-w-4xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-6xl">
+              <h1 className="mt-6 max-w-4xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] tracking-[-0.035em] text-[#2c3272] lg:text-6xl leading-[2.5rem]">
                 {title}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-[#2c3272]">{intro}</p>
@@ -43,7 +43,7 @@ export default function LegalPage({ eyebrow, title, intro, updated, sections }) 
               <div className="divide-y divide-[#dcdfeb] border-t border-[#dcdfeb]">
                 {sections.map(({ id, heading, body }) => (
                   <section key={id} id={id} className="scroll-mt-[84px] lg:scroll-mt-[124px] py-10 first:pt-10">
-                    <h2 className="text-2xl font-semibold leading-snug text-[#2c3272]">{heading}</h2>
+                    <h2 className="text-2xl font-semibold text-[#2c3272] leading-[2.5rem]">{heading}</h2>
                     <div className="mt-5 space-y-5">
                       {body.map((block, index) =>
                         Array.isArray(block) ? (

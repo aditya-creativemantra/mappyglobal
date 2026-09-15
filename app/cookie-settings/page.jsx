@@ -22,7 +22,7 @@ export default function CookieSettingsPage() {
           <section className="border-b border-[#dcdfeb] bg-white">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
               <p className={eyebrowClass}>Legal</p>
-              <h1 className="mt-6 max-w-4xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] leading-[1.02] tracking-[-0.035em] text-[#2c3272] lg:text-6xl">
+              <h1 className="mt-6 max-w-4xl font-display text-[2.15rem] font-semibold sm:text-[2.9rem] tracking-[-0.035em] text-[#2c3272] lg:text-6xl leading-[2.5rem]">
                 Cookie settings.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-[#2c3272]">

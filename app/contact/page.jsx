@@ -87,7 +87,7 @@ export default function ContactPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>Contact us</p>
-                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem] leading-[2.5rem]">
                     Get in touch.
                   </h1>
                   <p className="mt-7 text-lg leading-8 text-[#2c3272]">
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f6cdb6] bg-white shadow-[0_10px_26px_rgba(237,105,41,0.22)] transition-shadow duration-300 group-hover:shadow-[0_14px_32px_rgba(237,105,41,0.34)]">
                       <Icon className="h-7 w-7 text-[#ed6929]" />
                     </span>
-                    <h2 className="mt-6 text-xl font-semibold leading-snug text-[#2c3272]">{title}</h2>
+                    <h2 className="mt-6 text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{title}</h2>
                     <p className="mt-3 text-sm leading-7 text-[#2c3272]">{description}</p>
                     <span className="mt-5 inline-block break-words text-xs font-bold uppercase tracking-[0.12em] text-[#2c3272] underline underline-offset-4 transition-colors group-hover:text-[#ed6929]">
                       {action}
@@ -131,7 +131,7 @@ export default function ContactPage() {
             <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-8">
               <div>
                 <p className={eyebrowClass}>Enquiry form</p>
-                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-5xl">
+                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-5xl leading-[2.5rem]">
                   Tell us about your hiring need.
                 </h2>
                 <p className="mt-6 text-base leading-8 text-[#2c3272]">
@@ -181,7 +181,7 @@ export default function ContactPage() {
           <section id="offices" className="bg-white py-20 sm:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={eyebrowClass}>Our offices</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-5xl">
+              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-5xl leading-[2.5rem]">
                 Where you will find us.
               </h2>
 
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   .map((office) => (
                     <div key={office.city} className="border-t-2 border-[#2c3272] pt-6">
                       <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#ed6929]">{office.region}</p>
-                      <h3 className="mt-4 text-2xl font-semibold text-[#2c3272]">{office.city}</h3>
+                      <h3 className="mt-4 text-2xl font-semibold text-[#2c3272] leading-[2.5rem]">{office.city}</h3>
                       <p className="mt-4 text-[15px] leading-7 text-[#2c3272]">{office.address}</p>
                       <p className="mt-4 text-sm leading-6 text-[#6c7290]">{office.hours}</p>
                     </div>

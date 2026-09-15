@@ -41,7 +41,7 @@ export default function CookieSettingsPanel() {
         {cookieCategories.map((category) => (
           <div key={category.id} className="px-6 py-6 sm:px-8">
             <div className="flex flex-wrap items-center gap-3">
-              <h2 className="text-base font-semibold text-[#2c3272]">{category.label}</h2>
+              <h2 className="text-base font-semibold text-[#2c3272] leading-[2.5rem]">{category.label}</h2>
               <span className="border border-[#dcdfeb] px-2 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-[#6c7290]">
                 {category.required ? "Always on" : choices[category.id] ? "Allowed" : "Not allowed"}
               </span>

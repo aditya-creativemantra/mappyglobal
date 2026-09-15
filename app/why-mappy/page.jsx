@@ -77,7 +77,7 @@ export default function WhyMappyPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>Why Mappy?</p>
-                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem] leading-[2.5rem]">
                     Global delivery with local market judgment.
                   </h1>
                   <p className="mt-7 text-lg leading-8 text-[#2c3272]">
@@ -105,7 +105,7 @@ export default function WhyMappyPage() {
           <section id="proof" className="border-b border-[#dcdfeb] bg-white py-20 sm:py-28">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={eyebrowClass}>What global hiring looks like from where we sit</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                 Consultants working the same mandates from both ends of the market.
               </h2>
 
@@ -124,7 +124,7 @@ export default function WhyMappyPage() {
                     <div className="flex flex-1 flex-col justify-between border-x border-b border-[#dcdfeb] p-7">
                       <div>
                         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#ed6929]">{item.eyebrow}</p>
-                        <h3 className="mt-4 text-xl font-semibold leading-snug text-[#2c3272]">{item.title}</h3>
+                        <h3 className="mt-4 text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{item.title}</h3>
                       </div>
                       <p className="mt-4 text-sm leading-7 text-[#2c3272]">{item.description}</p>
                     </div>
@@ -140,7 +140,7 @@ export default function WhyMappyPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-24">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>How delivery works</p>
-                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-5xl">
+                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-5xl leading-[2.5rem]">
                     Search discipline, applied the same way every time.
                   </h2>
 
@@ -156,7 +156,7 @@ export default function WhyMappyPage() {
                           ) : null}
                         </div>
                         <div className={index < deliverySteps.length - 1 ? "pb-8" : ""}>
-                          <h3 className="text-lg font-semibold leading-10 text-[#2c3272]">{title}</h3>
+                          <h3 className="text-lg font-semibold leading-10 text-[#2c3272] leading-[2.5rem]">{title}</h3>
                           <p className="mt-2 text-sm leading-7 text-[#2c3272]">{description}</p>
                         </div>
                       </li>
@@ -194,7 +194,7 @@ export default function WhyMappyPage() {
 
                   <div className="border-t border-white/25 bg-white/10 p-6 backdrop-blur-xl sm:p-9">
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffb48c]">Client partnership</p>
-                    <h3 className="mt-4 font-display text-[1.5rem] font-semibold leading-[1.12] tracking-[-0.03em] text-white sm:text-[2.15rem]">
+                    <h3 className="mt-4 font-display text-[1.5rem] font-semibold tracking-[-0.03em] text-white sm:text-[2.15rem] leading-[2.5rem]">
                       Search conversations grounded in market context, stakeholder alignment, and global execution.
                     </h3>
                     <p className="mt-4 max-w-xl text-sm leading-7 text-white/80">
@@ -225,7 +225,7 @@ export default function WhyMappyPage() {
               <div className="grid gap-10 border border-[#dcdfeb] bg-[#f4f5fc] p-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:p-16">
                 <div>
                   <p className={eyebrowClass}>Start the conversation</p>
-                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                     Put the difference to work on your next hire.
                   </h2>
                   <p className="mt-6 max-w-xl text-base leading-8 text-[#2c3272] sm:text-lg">

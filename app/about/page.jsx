@@ -71,7 +71,7 @@ export default function AboutPage() {
               <div className="order-2 bg-[#e3e6f5] px-6 py-16 sm:px-12 lg:order-1 lg:flex lg:items-center lg:px-16 lg:py-20">
                 <div className="w-full max-w-xl">
                   <p className={eyebrowClass}>About us</p>
-                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem]">
+                  <h1 className="mt-6 font-display text-[2.15rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.9rem] lg:text-[3.4rem] leading-[2.5rem]">
                     Partnering in your critical and niche talent needs.
                   </h1>
                   <p className="mt-7 text-lg leading-8 text-[#2c3272]">
@@ -98,7 +98,7 @@ export default function AboutPage() {
             <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:px-8 lg:py-24">
               <div>
                 <p className={eyebrowClass}>Who we are</p>
-                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-5xl">
+                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-5xl leading-[2.5rem]">
                   A young, nimble team with senior search discipline.
                 </h2>
                 <div className="mt-7 space-y-6 text-base leading-8 text-[#2c3272]">
@@ -133,14 +133,14 @@ export default function AboutPage() {
           <section id="what-we-do" className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-28">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={eyebrowClass}>What we do</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                 Recruitment built around critical roles.
               </h2>
 
               <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 xl:grid-cols-4">
                 {whatWeDo.map(({ title, description }) => (
                   <div key={title} className="border-t-2 border-[#2c3272] pt-6">
-                    <h3 className="text-xl font-semibold text-[#2c3272]">{title}</h3>
+                    <h3 className="text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
                   </div>
                 ))}
@@ -156,7 +156,7 @@ export default function AboutPage() {
           <section id="approach" className="border-b border-[#dcdfeb] bg-white py-20 sm:py-28">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <p className={eyebrowClass}>How we work</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                 Speed, precision, reach, and partnership.
               </h2>
               <p className="mt-6 max-w-3xl text-base leading-8 text-[#2c3272] sm:text-lg">
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 {approachCards.map((item) => (
                   <div key={item.number} className="border-t border-[#dcdfeb] pt-6">
                     <p className="font-display text-5xl font-semibold tracking-[-0.04em] text-[#ed6929]">{item.number}</p>
-                    <h3 className="mt-5 text-xl font-semibold leading-snug text-[#2c3272]">{item.title}</h3>
+                    <h3 className="mt-5 text-xl font-semibold text-[#2c3272] leading-[2.5rem]">{item.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-[#2c3272]">{item.description}</p>
                   </div>
                 ))}
@@ -191,14 +191,14 @@ export default function AboutPage() {
 
               <div>
                 <p className={eyebrowClass}>Experience that delivers</p>
-                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-5xl">
+                <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-5xl leading-[2.5rem]">
                   Structured hiring support from brief to onboarding.
                 </h2>
 
                 <div className="mt-10 divide-y divide-[#dcdfeb] border-y border-[#dcdfeb]">
                   {capabilities.map(({ title, description }) => (
                     <div key={title} className="py-6">
-                      <h3 className="text-lg font-semibold text-[#2c3272]">{title}</h3>
+                      <h3 className="text-lg font-semibold text-[#2c3272] leading-[2.5rem]">{title}</h3>
                       <p className="mt-2 text-sm leading-7 text-[#2c3272]">{description}</p>
                     </div>
                   ))}
@@ -215,7 +215,7 @@ export default function AboutPage() {
               <div className="grid gap-10 border border-[#dcdfeb] bg-[#f4f5fc] p-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:p-16">
                 <div>
                   <p className={eyebrowClass}>Start the conversation</p>
-                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
+                  <h2 className="mt-5 font-display text-[1.9rem] font-semibold sm:text-4xl tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem] leading-[2.5rem]">
                     Work with a partner who knows your market.
                   </h2>
                   <p className="mt-6 max-w-xl text-base leading-8 text-[#2c3272] sm:text-lg">

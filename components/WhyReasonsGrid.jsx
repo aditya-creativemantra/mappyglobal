@@ -134,7 +134,7 @@ export default function WhyReasonsGrid() {
               What sets us apart
             </p>
 
-            <h2 className="mt-6 font-display text-[1.75rem] font-semibold leading-[1.06] tracking-[-0.035em] text-[#2c3272] sm:text-[2.1rem] lg:text-[2.4rem]">
+            <h2 className="mt-6 font-display text-[1.75rem] font-semibold tracking-[-0.035em] text-[#2c3272] sm:text-[2.1rem] lg:text-[2.4rem] leading-[2.5rem]">
               {headingWords.map((word, index) => (
                 <span key={`${word}-${index}`} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
                   <span data-reason-word className="inline-block">
@@ -232,7 +232,7 @@ export default function WhyReasonsGrid() {
 
                     <h3
                       data-reason-title
-                      className="font-display text-[1.7rem] font-semibold leading-[1.06] tracking-[-0.035em] text-[#2c3272] transition-transform duration-500 group-hover:translate-x-1.5 sm:-mt-[0.34em] sm:text-[2rem] lg:text-[2.2rem]"
+                      className="font-display text-[1.7rem] font-semibold tracking-[-0.035em] text-[#2c3272] transition-transform duration-500 group-hover:translate-x-1.5 sm:-mt-[0.34em] sm:text-[2rem] lg:mt-[calc(-0.34em-(2.5rem-1em)/2)] lg:text-[2.2rem] leading-[2.5rem]"
                     >
                       {title}
                     </h3>

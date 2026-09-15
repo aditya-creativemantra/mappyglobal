@@ -14,8 +14,8 @@ export default function GlobalReach({ id = "reach" }) {
               Hiring access across regions, sectors, and time zones.
             </h2>
             <p className="mt-6 max-w-lg text-base leading-8 text-white/70 sm:text-lg">
-              Two hubs, one delivery team. Consultants sit in the markets they recruit in and work the same mandates
-              from both ends — so briefs move forward while one side of the world sleeps.
+              One delivery team, working across time zones. Consultants sit in the markets they recruit in and stay on
+              the same mandates end to end — so briefs keep moving while one side of the world sleeps.
             </p>
 
             <Link href="/contact" className={`${btnOutlineLight} mt-9`}>

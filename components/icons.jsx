@@ -159,6 +159,24 @@ export function Rocket(props) {
   );
 }
 
+export function Send(props) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M21.5 2.5 2.5 9.8l7.6 2.9 2.9 7.6 8.5-17.8Z" />
+      <path d="m10.1 12.7 4.6-4.6" />
+    </svg>
+  );
+}
+
 export function ShieldCheck(props) {
   return (
     <svg

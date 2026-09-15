@@ -10,7 +10,7 @@ import { btnOutline, btnPrimary, contactEmail, eyebrowClass, offices, socialLink
 export const metadata = {
   title: "Contact us | Mappy Global Resources",
   description:
-    "Get in touch with Mappy Global Resources. Send an enquiry, email the team, or find our offices in Mumbai and Dubai."
+    "Get in touch with Mappy Global Resources. Send an enquiry, email the team, or find our Mumbai office."
 };
 
 function MailIcon(props) {

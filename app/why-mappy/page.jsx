@@ -4,8 +4,9 @@ import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import PageMotion from "@/components/PageMotion";
 import SiteHeader from "@/components/SiteHeader";
+import WhyReasonsGrid from "@/components/WhyReasonsGrid";
 import { BadgeCheck, Compass, Globe2, Handshake, Target } from "@/components/icons";
-import { btnOutline, btnPrimary, eyebrowClass, insightCards, whyMappyReasons } from "@/lib/site";
+import { btnOutline, btnPrimary, eyebrowClass, insightCards } from "@/lib/site";
 
 export const metadata = {
   title: "Why Mappy? | Mappy Global Resources",
@@ -98,26 +99,7 @@ export default function WhyMappyPage() {
           </section>
 
           {/* Reasons */}
-          <section id="reasons" className="border-b border-[#dcdfeb] bg-[#f4f5fc] py-20 sm:py-28">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <p className={eyebrowClass}>What sets us apart</p>
-              <h2 className="mt-5 max-w-3xl font-display text-[1.9rem] font-semibold sm:text-4xl leading-[1.04] tracking-[-0.03em] text-[#2c3272] lg:text-[3.25rem]">
-                Six reasons clients keep coming back.
-              </h2>
-
-              <div className="mt-14 grid gap-px border border-[#dcdfeb] bg-[#dcdfeb] md:grid-cols-2 xl:grid-cols-3">
-                {whyMappyReasons.map(({ title, description }, index) => (
-                  <article key={title} className="bg-white p-8 transition-colors hover:bg-[#fdf7f3] sm:p-10">
-                    <p className="font-display text-5xl font-semibold leading-none tracking-[-0.04em] text-[#ed6929]">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-6 text-xl font-semibold leading-snug text-[#2c3272]">{title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-[#2c3272]">{description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </section>
+          <WhyReasonsGrid />
 
           {/* Proof */}
           <section id="proof" className="border-b border-[#dcdfeb] bg-white py-20 sm:py-28">
@@ -187,7 +169,7 @@ export default function WhyMappyPage() {
                 </div>
               </div>
 
-              <div data-no-parallax className="relative order-1 lg:order-2">
+              <div data-no-parallax className="relative order-1 flex lg:order-2">
                 <Image
                   src="/images/mappy-consultation.png"
                   alt="Consultative hiring discussion with business stakeholders"
@@ -197,7 +179,7 @@ export default function WhyMappyPage() {
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,27,72,0.12)_0%,rgba(18,27,72,0.5)_52%,rgba(18,27,72,0.88)_100%)]" />
 
-                <div className="relative flex min-h-[520px] flex-col justify-between gap-10 lg:min-h-[720px]">
+                <div className="relative flex min-h-[520px] w-full flex-col justify-between gap-10 lg:min-h-[720px]">
                   <div className="flex flex-wrap gap-3 p-5 pb-0 sm:justify-end sm:p-8 sm:pb-0">
                     {topSignals.map(({ label, icon: Icon }) => (
                       <span

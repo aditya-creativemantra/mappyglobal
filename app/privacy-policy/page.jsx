@@ -12,7 +12,7 @@ const sections = [
     id: "who-we-are",
     heading: "Who we are",
     body: [
-      "Mappy Global Resources is a global recruitment agency providing executive search, specialist and niche recruitment, RPO and staffing support, and hiring support for expansions and transactions. We operate from Mumbai, India and Dubai, UAE.",
+      "Mappy Global Resources is a global recruitment agency providing executive search, specialist and niche recruitment, RPO and staffing support, and hiring support for expansions and transactions. We operate from Mumbai, India.",
       `This policy explains what personal information we collect through this website and in the course of our recruitment work, how we use it, and the choices you have. Questions can be sent to ${contactEmail}.`
     ]
   },
@@ -98,7 +98,7 @@ const sections = [
     id: "international",
     heading: "International transfers",
     body: [
-      "We work on cross-border mandates, so personal information may be transferred to and accessed from countries other than the one in which it was provided — including India and the United Arab Emirates, where our offices are located.",
+      "We work on cross-border mandates, so personal information may be transferred to and accessed from countries other than the one in which it was provided — including India, where our office is located.",
       "Where we transfer information internationally, we take steps to ensure it remains protected to the standard described in this policy."
     ]
   },
